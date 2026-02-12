@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>File Upload</title>
+    <style>
+        body { font-family: sans-serif; margin: 50px; }
+        .container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; width: 300px; }
+        .message { margin-top: 10px; color: blue; }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <h3>Upload a File</h3>
+    <form method="POST" action="/uploadfile" enctype="multipart/form-data">
+        <input type="file" name="file" /><br><br>
+        <button type="submit">Upload Now</button>
+    </form>
+
+    <div th:if="${message}" class="message">
+        <p th:text="${message}"></p>
+    </div>
+</div>
+<div class="imgcontainer">
+    <img th:src="@{'/files/' + ${img} }" alt="Uploaded Image">
+</div>
+
+</body>
+</html>
