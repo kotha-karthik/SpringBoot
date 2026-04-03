@@ -1,0 +1,27 @@
+To set up your local configuration repository for a Spring Cloud Config Server, follow these steps in your Windows Command Prompt or Git Bash:
+➡️ 1. Create the Directory
+First, create the folder that will act as your repository and move into it.
+mkdir configrepo
+cd configrepo
+➡️ 2. Create the Configuration File
+Create the application.properties file. You can use one of the vi alternatives we discussed, like Notepad.
+notepad application.properties
+In the window that opens, paste the following content:
+properties
+my.greeting=Hello World from config server
+my.list.values=One, Two, Three, Four
+
+db.connection=connection-string-here-from-config-server
+db.host=127.0.0.1
+db.port=1200
+Use code with caution.
+
+Save and close the file.
+➡️ 3. Initialize the Git Repository
+Turn this folder into a local Git repository.
+git init
+➡️ 4. Add and Commit the File
+Stage your changes and commit them to your local history.
+git add .
+git status (Verify that application.properties is listed in green as a "new file")
+git commit -m "initial commit"
